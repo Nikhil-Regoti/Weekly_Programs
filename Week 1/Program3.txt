@@ -1,0 +1,61 @@
+/*
+						Print Maximum element from Array
+*/
+
+import java.util.*;
+class Main {  
+  public static void main(String args[]) { 
+
+	  Scanner scanner=new Scanner(System.in);
+	  int number=scanner.nextInt();
+	  int[] array=new int[number];
+
+	  for(int i=0;i<number;i++)
+		  {
+			  array[i]=scanner.nextInt();
+		  }
+
+	  int max=printMaximum(array,0);
+	  System.out.println(max);
+	  
+  } 
+
+	public static int printMaximum(int[] array, int number)
+	{
+	    /* --------------------------- Using Recursion -------------------------
+	   if(number==array.length)
+	   {
+	       return number;
+	   }
+	   
+	   int second_max=printMaximum(array,number+1);
+	   
+	   if(second_max>array[number])
+	   {
+	       return second_max;
+	   }
+	   else
+	   {
+	       return array[number];
+	   }
+	   ---------------------------------------------------------------------- */
+	   
+	   int max=0;
+	   
+	   for(int i=0;i<array.length-1;i++)
+	   {
+	       if(array[i]>array[i+1])
+	       {
+	           max=array[i];
+	       }
+	       else
+	       {
+	           max=array[i+1];
+	       }
+	   }
+	   
+	   return max;
+	   
+	}
+	
+}

@@ -1,0 +1,48 @@
+/*
+
+				Reverse an Array
+
+Input:-   3
+		1 2 3
+		
+Output:- 3 2 1
+
+*/
+
+import java.util.*;
+class Main {  
+  public static void main(String args[]) { 
+
+	  Scanner scanner=new Scanner(System.in);
+	  int number=scanner.nextInt();
+	  int[] array=new int[number];
+
+	  for(int i=0;i<number;i++)
+		  {
+			  array[i]=scanner.nextInt();
+		  }
+
+	  printReverse(array,number);
+	  
+  } 
+
+	public static void printReverse(int[] array, int number)
+	{
+	   
+	   /* ------------------ Using Recursion ----------------------------------- 
+	    if(number<=0)
+	    {
+	        return;
+	    }
+	    
+	    System.out.print(array[number-1]+ " ");
+	    printReverse(array,number-1);
+	    ------------------------------------------------------------------------- */
+	    
+		for(int i=number-1;i>=0;i--)
+			{
+				System.out.print(array[i]+ " ");
+			}
+	}
+	
+}

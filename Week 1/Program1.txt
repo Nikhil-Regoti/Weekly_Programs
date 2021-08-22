@@ -1,0 +1,59 @@
+/******************************************************************************
+
+You are Given two linked lists representing two non-negative integers.
+The digits are stored in reverse order and each of there nodes contain
+a single digit. Add two numbers and return it as a linked list
+
+input:- 2 -> 4 -> 3 , 5 -> 6 -> 4
+
+Output:- 7 -> 0 -> 8
+
+Explanation:- 342 + 465 = 807
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		LinkedList<Integer> list1=new LinkedList<Integer>();
+		LinkedList<Integer> list2=new LinkedList<Integer>();
+		Scanner scanner=new Scanner(System.in);
+		int n=3,number;
+		
+		for(int i=0;i<n;i++)
+		{
+		    number=scanner.nextInt();
+		    list1.add(number);
+		}
+		
+		for(int i=0;i<n;i++)
+		{
+		    number=scanner.nextInt();
+		    list2.add(number);
+		}
+		
+		int reverse1=0,reverse2=0;
+		
+		for(int i=list1.size()-1;i>=0;i--)
+		{
+		    int temp=list1.get(i);
+		    reverse1=reverse1*10+temp;
+		}
+		
+		for(int i=list2.size()-1;i>=0;i--)
+		{
+		    int temp=list2.get(i);
+		    reverse2=reverse2*10+temp;
+		}
+		
+	    int sum=reverse1+reverse2;
+	    
+	    while(sum>0)
+	    {
+	        System.out.print(sum%10+" ");
+	        sum/=10;
+	    }
+		
+	}
+}
